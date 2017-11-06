@@ -1,24 +1,23 @@
-﻿using CS270.DataBases;
+﻿using FedEx.Model.DataBases;
 using System.Collections.Generic;
 using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using CS270_Ver_2._0.Modules;
-using CS270.Modules;
+using FedEx.Model.Modules;
 using System;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace CS270
+namespace FedEx.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class Customers : Page
     {
         public Customers()
         {
             this.InitializeComponent();
+            DefaultAerial();
+            Results.Items.Clear();
+            PrintCustomers(Aerial_Database.indexes);
+            DefaultSetUp();
         }
 
         private void DefaultSetUp()
@@ -332,6 +331,22 @@ namespace CS270
             mailing.SearchMailing(Aerial_Database.indexes[Results.SelectedIndex], mailing);
             MailingResults.Items.Clear();
             DefaultPrintMailing(Aerial_Database.mailIndexes);
+        }
+
+        private void Schedule_Click(object sender, RoutedEventArgs e)
+        {
+            Orders form = new Orders();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
+        }
+
+        private void PlanesButton_Click(object sender, RoutedEventArgs e)
+        {
+            Planes form = new Planes();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
         }
     }
 }

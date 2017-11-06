@@ -1,14 +1,14 @@
 ﻿<Page
-    x:Class="CS270.Planes"
+    x:Class="FedEx.View.Planes"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CS270"
+    xmlns:local="using:FedEx.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="478" Width="922">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="Planes" Visibility ="Visible" HorizontalAlignment="Left" Height="473" VerticalAlignment="Top" Width="873">
+        <Grid x:Name="PlanesGrid" Visibility ="Visible" HorizontalAlignment="Left" Height="473" VerticalAlignment="Top" Width="873">
             <CommandBar HorizontalAlignment="Left" Height="46.011" Margin="871.934,419.486,-472.51,0" VerticalAlignment="Top" Width="473.576" RenderTransformOrigin="0.062,0.552" UseLayoutRounding="False" d:LayoutRounding="Auto">
                 <CommandBar.RenderTransform>
                     <CompositeTransform Rotation="269.895"/>
@@ -16,8 +16,8 @@
                 <CommandBar.Content>
                     <Grid/>
                 </CommandBar.Content>
-                <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" Click="Planes_Click" VerticalAlignment="Bottom"/>
-                <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="Customer1_Click"/>
+                <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" VerticalAlignment="Bottom"/>
+                <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="CustomersButton_Click"/>
                 <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton" Click="Schedule_Click"/>
             </CommandBar>
             <GridView x:Name="PResults" HorizontalAlignment="Left" Height="453" Margin="10,10,0,0" VerticalAlignment="Top" Width="292" SelectionChanged="PResults_SelectionChanged"/>

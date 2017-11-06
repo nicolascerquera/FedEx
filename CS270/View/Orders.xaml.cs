@@ -1,21 +1,31 @@
-﻿using CS270.DataBases;
+﻿using FedEx.Model.DataBases;
 using System.Collections.Generic;
 using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using CS270_Ver_2._0.Modules;
-using CS270.Modules;
+using FedEx.Model.Modules;
 using System;
 
-namespace CS270
+namespace FedEx.View
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class Orders : Page
     {
-        public MainPage()
+        public Orders()
         {
-            this.InitializeComponent();
-            Aerial_Database.IntitializeMasterAerial();
-            Hanger_Database.IntializeHanger();
+            this.InitializeComponent();            
+            DefaultAerial();
+            DefaultPlaneIndex();
+            PrintCustomersSchedule(Aerial_Database.indexes);
+            PrintPlanesSchedule(Hanger_Database.Plane_Index);
+        }
+
+        private void DefaultAerial()
+        {
+            Aerial_Database.indexes.Clear();
+            for (var i = 0; i < Aerial_Database.Aerial_Master.Count; i++)
+            {
+                Aerial_Database.indexes.Add(i);
+            }
         }
 
         private void DefaultSqueduling()
@@ -156,6 +166,15 @@ namespace CS270
             Zipcode_Mailing_Schedule.Text = "";
         }
 
+        private void DefaultMailing(int customerIndex)
+        {
+            Aerial_Database.mailIndexes.Clear();
+            for (var i = 0; i < Aerial_Database.Aerial_Master[customerIndex].Mailing.Count; i++)
+            {
+                Aerial_Database.mailIndexes.Add(i);
+            }
+        }
+
         private void CancelSearch_Mailing_Click(object sender, RoutedEventArgs e)
         {
             MailingSchedule.SelectedIndex = -1;
@@ -204,6 +223,15 @@ namespace CS270
             plane.SearchPlane(plane);
             PlanesSchedule.Items.Clear();
             PrintPlanesSchedule(Hanger_Database.Plane_Index);
+        }
+
+        private void DefaultPlaneIndex()
+        {
+            Hanger_Database.Plane_Index.Clear();
+            for (var i = 0; i < Hanger_Database.Hanger.Count; i++)
+            {
+                Hanger_Database.Plane_Index.Add(i);
+            }
         }
 
         private void CancelSearch_Plane_Click(object sender, RoutedEventArgs e)
@@ -282,6 +310,22 @@ namespace CS270
             {
                 Schedules.Items.Add(box);
             }
+        }
+
+        private void CustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Customers form = new Customers();
+            Window.Current.Content.Visibility = Visibility.Collapsed;            
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
+        }
+
+        private void PlanesButton_Click(object sender, RoutedEventArgs e)
+        {
+            Planes form = new Planes();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="CS270.Customers"
+    x:Class="FedEx.View.Customers"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CS270"
@@ -15,8 +15,8 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" Click="Planes_Click" VerticalAlignment="Bottom"/>
-            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="Customer1_Click"/>
+            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" VerticalAlignment="Bottom" Click="PlanesButton_Click"/>
+            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" VerticalAlignment="Bottom"/>
             <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton" Click="Schedule_Click"/>
         </CommandBar>
         <Grid Name ="Customer" Visibility="Visible" Margin="0,0,49,0">

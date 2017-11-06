@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:DataBases="using:CS270.DataBases"
-    x:Class="CS270.MainPage"
+    x:Class="FedEx.View.Orders"
     mc:Ignorable="d" Height="734" Width="908">
 
     <Grid Name ="Main" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">        
@@ -16,9 +16,9 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" Click="Planes_Click" VerticalAlignment="Bottom"/>
-            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="Customer1_Click"/>
-            <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton" Click="Schedule_Click"/>
+            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" VerticalAlignment="Bottom" Click="PlanesButton_Click"/>
+            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="CustomersButton_Click"/>
+            <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton"/>
         </CommandBar>       
         <Grid x:Name="SchedulePlane" Visibility="Visible" HorizontalAlignment="Left" Height="734" VerticalAlignment="Top" Width="859">
             <ListView x:Name="CustomerSchedule" HorizontalAlignment="Left" Height="146" Margin="10,10,0,0" VerticalAlignment="Top" Width="185" SelectionChanged="ListView_SelectionChanged"/>

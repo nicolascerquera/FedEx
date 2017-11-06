@@ -1,12 +1,8 @@
-﻿using CS270.Modules;
-using System;
+﻿using FedEx.Model.Modules;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
-namespace CS270.DataBases
+namespace FedEx.Model.DataBases
 {
     class JhonFKennedy_Database
     {
