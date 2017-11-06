@@ -6,15 +6,13 @@ using Windows.UI.Xaml.Controls;
 using FedEx.Model.Modules;
 using System;
 
-namespace CS270
+namespace FedEx.View
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class Orders : Page
     {
-        public MainPage()
+        public Orders()
         {
-            this.InitializeComponent();
-            Aerial_Database.IntitializeMasterAerial();
-            Hanger_Database.IntializeHanger();
+            this.InitializeComponent();            
             DefaultAerial();
             DefaultPlaneIndex();
             PrintCustomersSchedule(Aerial_Database.indexes);
@@ -312,6 +310,22 @@ namespace CS270
             {
                 Schedules.Items.Add(box);
             }
+        }
+
+        private void CustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Customers form = new Customers();
+            Window.Current.Content.Visibility = Visibility.Collapsed;            
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
+        }
+
+        private void PlanesButton_Click(object sender, RoutedEventArgs e)
+        {
+            Planes form = new Planes();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
         }
     }
 }

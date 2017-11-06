@@ -17,8 +17,8 @@
                     <Grid/>
                 </CommandBar.Content>
                 <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" VerticalAlignment="Bottom"/>
-                <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton"/>
-                <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton"/>
+                <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="CustomersButton_Click"/>
+                <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton" Click="Schedule_Click"/>
             </CommandBar>
             <GridView x:Name="PResults" HorizontalAlignment="Left" Height="453" Margin="10,10,0,0" VerticalAlignment="Top" Width="292" SelectionChanged="PResults_SelectionChanged"/>
             <TextBox x:Name="AirplaneNumber" HorizontalAlignment="Left" Height="22" Margin="341,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" PlaceholderText="Airplane Number"/>

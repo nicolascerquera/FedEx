@@ -10,8 +10,9 @@ namespace FedEx.View
         public Planes()
         {
             this.InitializeComponent();
-            Aerial_Database.IntitializeMasterAerial();
-            Hanger_Database.IntializeHanger();
+            DefaultPlaneIndex();
+            PrintPlanes();
+            DefaultPlanes();
         }
 
         private void DefaultPlanes()
@@ -139,6 +140,22 @@ namespace FedEx.View
             plane.SearchPlane(plane);
             PResults.Items.Clear();
             PrintPlanes();
+        }
+
+        private void CustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Customers form = new Customers();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
+        }
+
+        private void Schedule_Click(object sender, RoutedEventArgs e)
+        {
+            Orders form = new Orders();
+            Window.Current.Content.Visibility = Visibility.Collapsed;
+            Window.Current.Content = form;
+            form.Visibility = Visibility.Visible;
         }
     }
 }
