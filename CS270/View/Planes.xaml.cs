@@ -1,24 +1,17 @@
-﻿using CS270.DataBases;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FedEx.Model.DataBases;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using CS270_Ver_2._0.Modules;
-using CS270.Modules;
-using System;
+using FedEx.Model.Modules;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
-namespace CS270
+namespace FedEx.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class Planes : Page
     {
         public Planes()
         {
             this.InitializeComponent();
+            Aerial_Database.IntitializeMasterAerial();
+            Hanger_Database.IntializeHanger();
         }
 
         private void DefaultPlanes()

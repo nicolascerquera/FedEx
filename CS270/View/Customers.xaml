@@ -15,9 +15,9 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" Click="Planes_Click" VerticalAlignment="Bottom"/>
-            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" Click="Customer1_Click"/>
-            <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton" Click="Schedule_Click"/>
+            <AppBarButton x:Name="PlanesButton" Icon="World" Label="AppBarButton" VerticalAlignment="Bottom"/>
+            <AppBarButton x:Name="CustomersButton" Icon="Contact" Label="AppBarButton" VerticalAlignment="Bottom" Click="CustomersButton_Click"/>
+            <AppBarButton x:Name="Schedule" Icon="Find" Label="AppBarButton"/>
         </CommandBar>
         <Grid Name ="Customer" Visibility="Visible" Margin="0,0,49,0">
             <Button x:Name="EraseMailingAddress" Content="Erase Mailing Address" HorizontalAlignment="Left" Height="38" Margin="272,425,0,0" VerticalAlignment="Top" Width="167" Click="EraseMailingAddress_Click"/>

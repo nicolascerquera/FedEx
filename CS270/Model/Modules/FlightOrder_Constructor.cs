@@ -1,11 +1,6 @@
-﻿using CS270_Ver_2._0.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace CS270.Modules
+namespace FedEx.Model.Modules
 {
     class FlightOrder_Constructor
     {

@@ -1,7 +1,7 @@
-﻿using CS270.DataBases;
+﻿using FedEx.Model.DataBases;
 using System.Collections.Generic;
 
-namespace CS270_Ver_2._0.Modules
+namespace FedEx.Model.Modules
 {
     class Customer_Constructor
     {
